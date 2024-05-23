@@ -1,0 +1,13 @@
+﻿.mindfulness-bg-kindness {
+    background: url(../img/week8/kindness.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding: 0.5em;
+    text-align:center;
+    height:100vh;
+    background-position:center;
+}

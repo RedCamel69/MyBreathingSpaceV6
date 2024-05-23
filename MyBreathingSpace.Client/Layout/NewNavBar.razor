@@ -1,0 +1,103 @@
+@inject NavigationManager Navigation;
+
+<header id="header" class="fixed-top d-flex justify-content-center align-items-center @headerTransparentCss">
+    <nav id="navbar" class="navbar @NavMenuCssClass">
+        <ul @onclick="CloseNavMenu">
+            <li>
+                <!-- make home a standard a otherwise will match all page refreshes-->
+                @* <a href="/" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("home"))" class="@homeLinkCSS">Home</a> *@
+                <NavLink href="/" Match="NavLinkMatch.All" aria-label="Go back to the landing page">
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                @* <a href="#why-yoga" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("about"))" class="@aboutLinkCSS">About</a> *@
+                <NavLink href="/#whatismindfulness" Match="NavLinkMatch.All" aria-label="Go to the section explaining mindfulness">What is mindfulness?</NavLink>
+            </li>
+            <li>
+                @* <a href="/#classes" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("classes"))" class="@classesLinkCSS">Classes</a> *@
+                <NavLink href="/#aboutjean" Match="NavLinkMatch.All">About Jean</NavLink>
+            </li>
+            <li class="dropdown">
+                <NavLink href="/mbsr" Match="NavLinkMatch.Prefix">MBSR Overview</NavLink>
+                <ul>
+                    <li><NavLink href="/mbsr" Match="NavLinkMatch.All">Overview</NavLink></li>
+                    <li><NavLink href="/mbsr/orientation" Match="NavLinkMatch.All">Orientation</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks1and2" Match="NavLinkMatch.All">Weeks 1 and 2</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks3and4" Match="NavLinkMatch.All">Weeks 3 and 4</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks5and6" Match="NavLinkMatch.All">Weeks 5 and 6</NavLink></li>
+                    <li><NavLink href="/mbsr/retreat" Match="NavLinkMatch.All">Retreat</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks7and8" Match="NavLinkMatch.All">Weeks 7 and 8</NavLink></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                
+                <NavLink href="/course" Match="NavLinkMatch.Prefix">Course</NavLink>
+                <ul>
+                    <li><NavLink href="/course" Match="NavLinkMatch.All">Week1</NavLink></li>
+                    <li><NavLink href="/course/week2" Match="NavLinkMatch.All">Week2</NavLink></li>
+                    <li><NavLink href="/course/week3" Match="NavLinkMatch.All">Week3</NavLink></li>
+                    <li><NavLink href="/course/week4" Match="NavLinkMatch.All">Week4</NavLink></li>
+                    <li><NavLink href="/course/week5" Match="NavLinkMatch.All">Week5</NavLink></li>
+                    <li><NavLink href="/course/week6" Match="NavLinkMatch.All">Week6</NavLink></li>
+                    <li><NavLink href="/course/week7" Match="NavLinkMatch.All">Week7</NavLink></li>
+                    <li>
+                        <NavLink href="/course/week8" Match="NavLinkMatch.All">Week8</NavLink></li>
+
+                </ul>
+
+               
+
+            </li>
+            <li>  <LoginDisplay /> </li>
+        </ul>
+      
+        <i class="bi bi-list mobile-nav-toggle @mobileMenuTogglerCssClass" @onclick="ToggleNavMenu"></i>
+    </nav><!-- .navbar -->
+
+
+</header>
+
+@code {
+    private bool landingPage = true;
+    private string? headerTransparentCss => landingPage ? "header-transparent" : null;
+
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? null : "navbar-mobile";
+
+    private string? NavMenuDropdownCssClass => collapseNavMenu ? null : "dropdown-active";
+    private string? mobileMenuTogglerCssClass => collapseNavMenu ? null : "bi-x";
+
+    private string @CloseMenuCssClass => collapseNavMenu ? "d-none" : "d-flex";
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+        Navigation.LocationChanged += OnLocationChanged;
+
+        landingPage = (Navigation.Uri == Navigation.BaseUri);
+
+
+    }
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+
+        landingPage = e.Location.Contains("home") || (Navigation.Uri == Navigation.BaseUri);
+        StateHasChanged();
+    }
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void CloseNavMenu()
+    {
+        if (collapseNavMenu == false)
+            collapseNavMenu = true;
+    }
+}

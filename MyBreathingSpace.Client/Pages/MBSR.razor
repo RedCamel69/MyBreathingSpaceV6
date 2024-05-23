@@ -1,0 +1,192 @@
+﻿@page "/mbsr"
+@layout SecondaryLayout
+
+@inject IJSRuntime JS
+@implements IDisposable
+
+
+<PageTitle>mbsr</PageTitle>
+
+
+<!-- ======= THe MBSR Section ======= -->
+<section id="msbr-title" class="" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
+      <div class="container">
+
+        <div class="section-title">
+            <h2 class="display-1">The MBSR course</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-12">
+                <h2 class="display-3 text-start">What is it?</h2>
+                <p>
+                    The MBSR course is an 8-week program that teaches mindfulness and compassion. It is designed to help individuals manage stress, anxiety, and pain. The course is based on the gold standard, Jon Kabat-Zinn Mindfulness-Based Stress Reduction training. The course includes practical tools, such as mindfulness meditation, body scanning, and simple yoga postures, as well as live mindfulness practices and group discussions. During the course, there is also the opportunity to attend a full day retreat.
+                </p>
+                <h2 class="display-3 text-start">Why should I do it?</h2>
+                <p>
+                    Research has shown that MBSR can lead to various benefits, including reduced stress, improved emotional regulation, enhanced focus, better sleep quality, and increased overall well-being <strong>ref here</strong>. MBSR fosters a mindful approach to life, helping individuals develop a more compassionate relationship with themselves and the world around them. The course is a prerequisite for anyone wanting to start the Mindfulness-Based Stress Reduction Teacher Training pathway.
+                </p>                
+            </div>
+        </div>
+        </div>
+    </section><!-- End About Us Section -->
+
+
+   
+<!-- ======= Overview Section ======= -->
+
+@* eff2f0 *@
+<section id="mbsr-curriculum" class="" style="background-color:white;">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="display-3 text-start">Overview</h2>
+        </div>
+
+        <div class="row">
+            <div class="card col-lg-6 p-4 mb-1" id="orientation">
+                <img src="../img/hero-bg.webp" class="card-img-top card-image" alt="..." >
+                <div class="card-body">
+                    <h5 class="card-title">Orientation</h5>
+                    <ul>
+                        <li>Introduction & Course Overview</li>
+                        <li>Meet your tutor and other participants</li>
+                        <li>Q&A</li>
+                    </ul>
+                    <a href="/mbsr/orientation" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-6 p-4 mb-1" id="weeks1and2">
+                <img src="../img/week1/daisies-bg.jpg" class="card-img-top card-image" alt="..." >
+                <div class="card-body">
+                    <h5 class="card-title">Weeks 1 and 2</h5>
+                    <p>The first two weeks of the course are focused on introducing mindfulness and its benefits. During this period, you will learn about the body scan, mind and body connection, and how to build mindfulness into daily life. </p>
+                    <p>You will also learn about stress and stress response</p>
+                    <a href="/mbsr/weeks1and2" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-6 p-4 mb-1" id="weeks3and4">
+                <img src="../img/week4/wild-geese.jpg" class="card-img-top card-image" alt="..." >
+                <div class="card-body">
+                    <h5 class="card-title">Weeks 3 and 4</h5>
+                    <p>We continue to build on the foundation laid in the first two weeks. The focus shifts to stress reactivity and movement meditation. You will learn about responding versus reacting to stress, and how to manage difficulties and challenges in day-to-day life</p>
+                    <a href="/mbsr/weeks3and4" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-6 p-4 mb-1" id="weeks5and6">
+                <img src="../img/week6/wonder.webp" class="card-img-top card-image" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Weeks 5 and 6</h5>
+                    <p>We continue to build on the foundation laid in the first two weeks. The focus shifts to stress reactivity and movement meditation. You will learn about responding versus reacting to stress, and how to manage difficulties and challenges in day-to-day life</p>
+                    <a href="/mbsr/weeks5and6" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-6 p-4 mb-1" id="retreat">
+                <img src="../img/week5/white-windows.jpg" class="card-img-top card-image" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">One Day silent retreat</h5>
+                    <p>We continue to build on the foundation laid in the first two weeks. The focus shifts to stress reactivity and movement meditation. You will learn about responding versus reacting to stress, and how to manage difficulties and challenges in day-to-day life</p>
+                    <a href="/mbsr/retreat" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-6 p-4 mb-1" id="weeks7and8">
+                <img src="../img/week8/kindness.webp" class="card-img-top card-image" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Weeks 7 and 8</h5>
+                    <p>We continue to build on the foundation laid in the first two weeks. The focus shifts to stress reactivity and movement meditation. You will learn about responding versus reacting to stress, and how to manage difficulties and challenges in day-to-day life</p>
+                    <a href="/mbsr/weeks7and8" class="btn btn-primary">Find out more</a>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <br />
+</section>
+
+
+
+
+
+@* <a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a> *@
+
+
+@code {
+
+    //ElementReference hero;
+
+    //DotNetObjectReference<Index> selfReference;
+
+
+    private IJSObjectReference? _jsModule;
+
+    //private Modal modal;
+
+
+    private List<String> OrientationObjectives = new List<String>() { 
+        "Familiarise potential participants with what MBSR is and what it is not.", 
+        "Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.",
+                "Discover if the MBSR is a good match for participants’ needs.",
+        "Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home."
+    };
+
+    private List<String> OrientationObjectives2 = new List<String>() {
+        "A brief history of the MBSR course.",
+        "Engagement in a brief mindful meditation practice.",
+         "Introductions to other members of the group, and sharing of experiences.",
+        "Sharing programme procedures, and an introduction to course logistics.",
+        "An individual interview with myself.",
+        "Answering any questions."
+    };
+ 
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
+
+        if (_jsModule!=null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+        
+    }
+
+    private async Task OnShowModalClick()
+    {
+        //await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        //await modal?.HideAsync();
+    }
+}

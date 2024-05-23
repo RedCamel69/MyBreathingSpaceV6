@@ -1,0 +1,21 @@
+﻿    .LoginDisplay{
+        color:white;       
+    }
+
+    @media (max-width: 991px) {
+    
+    .LoginDisplay{
+       
+            margin-left:20px;
+            font-size: 14px;
+                color: #3b434a;
+                text-transform:uppercase;
+                font-weight:600;
+                letter-spacing:1px;
+
+
+              
+    }
+
+       
+    }

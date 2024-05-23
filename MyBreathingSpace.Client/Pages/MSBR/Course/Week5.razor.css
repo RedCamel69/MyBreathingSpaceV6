@@ -1,0 +1,97 @@
+﻿
+.mindfulness-bg-the-guest-house {
+    background: url(../img/week5/white-windows.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding:2em;
+    padding-top: 5em;
+}
+
+.home-practice-bg {
+    background: url(../img/mindfulness-practice-1.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding: 2em;
+}
+
+.row {
+    animation: row_fade 1s ease;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.6;
+    padding: 1em;
+    animation: poem_fade 1s;
+}
+
+@keyframes poem_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+.zoomable-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-style: solid;
+    padding: 1em;
+    transition: all 0.1s;
+}
+
+.zoomable-image:hover {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2); /* IE 9 */
+    -moz-transform: scale(1.2); /* Firefox */
+    -webkit-transform: scale(1.2); /* Safari and Chrome */
+    -o-transform: scale(1.2); /* Opera */
+    transition: all 0.3s;
+    padding: 0em;
+    border-radius: 15px;
+    background-color:white;
+    max-width:100%;
+}
+
+@media (max-width: 600px) {
+    .home-practice-bg {
+        background: url(../img/mindfulness-practice-1.jpg) no-repeat fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        color: white;
+        padding: 0em;
+    }
+
+    .zoomable-image:hover {
+        transform: scale(1.5);
+        -ms-transform: scale(1.5); /* IE 9 */
+        -moz-transform: scale(1.5); /* Firefox */
+        -webkit-transform: scale(1.5); /* Safari and Chrome */
+        -o-transform: scale(1.5); /* Opera */
+    }
+}

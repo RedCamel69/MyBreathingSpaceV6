@@ -1,0 +1,343 @@
+﻿@page "/"
+@page "/home"
+
+@layout SecondaryLayout
+@inject IJSRuntime JS
+@inject NavigationManager Navigation;
+
+@implements IDisposable
+
+@using MyBreathingSpace.Client.Components
+
+<PageTitle>mybreathingspace.net - mindfulness coaching</PageTitle>
+
+<Hero></Hero>
+
+<!-- ======= WhatIsMindfulness Section ======= -->
+<section id="whatismindfulness" class="" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
+    <div class="container">       
+        <div class="section-title">
+            <h1 class="display-2">What is Mindfulness?</h1>
+        </div>
+        
+     
+        <div class="row content lead">
+            <figure class="text-center">
+                <blockquote class="blockquote text-center">
+                    <p class="">Mindfulness is the awareness that emerges through paying attention on purpose, in the present moment, and non-judgementally, to things as they are.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer"> 
+                    Williams, Teasdale, Segal, and Kabat-Zinn 2007 <cite title="Source Title">The Mindful Way through Depression</cite>
+                </figcaption>
+            </figure>
+        </div>
+     <div class="row">
+ </div>
+        <div class="row">
+            <p>
+              We have all experienced mindfulness; for example, when we are focused on something we enjoy such as sewing, playing a sport we love or a walk on a beautiful summer day. It is when time seems to have no meaning and you are fully and completely engaged in the present moment. These conditions make us feel fully alive and whole, but at times of difficulty and external pressures we fail to find this more helpful state of mind. Instead, many of us harm ourselves by the way we think about the challenges we face. We spend time and energy worrying about what might happen in the future or ruminating over things that have happened in the past.
+            </p>       
+        </div>
+       
+        <div class="row row-padded-override text-center yt-video">
+            <p>
+                    <iframe style="position: relative;width:100%;max-width:800px;aspect-ratio:3/2;border-style:solid;border-width:0.6em;border-radius:5px" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </p>
+        </div>
+        <div class="row row-padded-override">
+            <p>
+                    The MBSR course offers a solution by gently encouraging us to live more often in the present moment. Mindfulness practice does not invalidate our worries or concerns, but rather it allows us to take a break from them.
+            </p>
+
+            <p>
+                    During the MBSR course we will also consider how to explore our difficulties as they emerge in the present moment, accept them and begin to think about how we might deal with them differently.
+            </p>
+                
+
+            </div>
+
+     
+
+        </div>
+
+    <div class="container">
+            <div class="row">
+
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                <div class="content">
+                    <h3 class="display-6">Frequently Asked <strong>Questions</strong></h3>
+                    <p class=""></p>
+                </div>
+
+                <div class="accordion text-dark " id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Is Mindfulness just a fad?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                <p>
+                                    It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
+
+                                    In the late 1990s, there was an increase in research into the effectiveness of MBSR courses. It has been shown to alleviate distress in those experiencing depression and anxiety. Participants in MBSR courses reported being better able to cope with and manage stress. (Biegel et al 2009; Beal et al 2012).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Is Mindfulness Buddhism?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                <p>
+                                    Mindfulness has its foundations in Buddhism, but the MBSR is a western secular course. It simply teaches meditation designed to allow us to become more aware of ourselves as human beings. It does not teach Buddhism and people from all faiths and cultures are welcome.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Can I practise at home?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                <p>
+                                    Mindfulness is like any other learning experience; unless it is practised on a regular basis it is unlikely to be beneficial. Home practice will be provided, but can be adapted to suit each person’s individual’s lifestyle. The homework is designed to be enjoyable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What will an MBSR course do for me?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                <p>
+                                    The MBSR course should not be used as a substitute for medical care because it is not intended to treat or replace therapy or medical care. It seeks to be preventative and may be therapeutic for those who experience stress, common aches and pains, migraines, and other illnesses. Participants on MBSR courses have reported feeling more alive, and more "in-tune" with themselves and others.
+                                </p>
+                                <p>Through this MBSR course, you will learn skills that may increase your ability to:</p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Cope with stress, pain, and the challenges of everyday life</li>
+                                    <li><i class="ri-check-double-line"></i> Deal with difficult events with grace and composure</li>
+                                    <li><i class="ri-check-double-line"></i> Be fully present and alive in this moment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            @* <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/faq2.webp");'>&nbsp;</div> *@
+        </div>
+
+    </div>
+
+
+</section><!-- End WhatIsMindfulness Section -->
+
+
+<!-- ======= About Jean Section ======= -->
+<section id="aboutjean" class="" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
+    <div class="container">
+
+        <div class="section-title">
+            <h2 class="display-5">Dr Jean Carnochan : Personal Introduction</h2>
+        </div>
+
+        <div class="row content">
+            <div class="col-lg-12">
+                <p>
+                    My training is in educational psychology. I hold a teaching qualification from the University of Manchester, as well as a master's degree in educational psychology and a doctorate in educational psychology from the University of Bristol. My psychological training and personal experience have provided a natural path to investigate concepts of mindfulness, as well as an interest in how to most effectively convey it to children and adults, thereby offering people of all ages a different, and potentially more balanced and clear way to think and feel about their daily experiences. I am particularly keen to encourage involvement from members of society who do not typically attend mindfulness classes but would benefit from the experience.
+                </p>
+                <p>
+                    I had been using meditation as a form of stress reduction since the 1980s, but I did not fully understand the true purpose of meditation until I began my current career as an educational psychologist when a colleague delivered an introductory session on mindfulness. The penny dropped! The purpose is not to relax, although this is a very positive by-product, but rather to pay attention, to become awake and aware, to engage with our world differently; with gentle and detailed exploration. Our exploration can be extended to create awareness not simply of ourselves, and our environment, but also of others. A deeper understanding of ourselves and each other can only lead to better communication, less misunderstanding and more gentle dialogue. This can only be positive in a world which sometimes feels like it is full of negative rhetoric.
+                </p>
+              <p>
+                    I took the Mindfulness Based Stress Reduction (MBSR) course for eight weeks between February and March of 2015. I will be eternally grateful to Katie Norton, my tutor, who set an excellent example of how to approach and run the course. I began training to teach the.b Mindfulness course to secondary school students. Prior to delivering the.b Mindfulness course to students, I had to experience and deliver it. This has been a fascinating project, and I enjoy teaching mindfulness to young people, even if they do not continue to practise it after the 10-week programme.They now have a piece of potential personal support to 'hook into' later in life if they wish.
+              </p>
+              <p>
+                    Since November 2018 I have been working towards a mindfulness teaching qualification with the University of Bangor. In November 2018, I attended the 7 day teacher training retreat delivered by two amazing tutors (Trish Bartley and Bethan Roberts) from Bangor University’s Centre for Mindfulness Research and Practice. I am therefore qualified to deliver the Eight Week MBSR course to adults.
+              </p>
+              <p>
+                    If you have any questions about my background and/or qualifications please do not hesitate to contact me.
+              </p>
+              <p>
+                    I look forward to experiencing mindfulness with you.
+              </p>
+              <p>
+                    Jean Carnochan
+              </p>
+              <p>
+                    3rd April 2023
+              </p>
+            </div>
+           
+        </div>
+       
+    </div>
+
+   
+
+</section><!-- End About Jean Section -->
+
+
+<Testimonials></Testimonials>
+
+
+
+
+@* <article id="Kindness" class="mindfulness-bg-kindness content mbs-base-style-font">
+   
+</article>
+ *@
+
+
+<!-- ======= Counts Section ======= -->
+@* <section id="counts" class="counts">
+    <div class="container">
+
+        <div class="text-center title">
+            <h3>Our story so far...</h3>           
+        </div>
+
+        <div class="row counters position-relative">
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">12</span>
+                <p>Clients</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter">2</span>
+                <p>Courses</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter">9</span>
+                <p>Workshops</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter">10</span>
+                <p>Years of Experience</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>  *@
+<!-- End Counts Section -->
+
+@* <a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a>
+ *@
+
+@code {
+
+    //ElementReference hero;
+
+    //DotNetObjectReference<Index> selfReference;
+
+
+    private IJSObjectReference? _jsModule;
+
+    //private Modal modal;
+
+    bool showModal = false;
+    private bool scrolledToWhatIs = false; //todo: must be a better way?!
+    private bool scrolledAboutJean = false; //todo: must be a better way?!
+    
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+        Navigation.LocationChanged += OnLocationChanged;
+        
+              
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "../js/main.js");
+
+        if (_jsModule!=null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // execute conditionally for loading data, otherwise this will load
+        // every time the page refreshes
+        // if (firstRender)
+        // {
+        //     // Do work to load page data and set properties
+        //     //Navigation.LocationChanged -= OnLocationChanged;
+
+        //         Navigation.LocationChanged += OnLocationChanged;
+
+        // }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onDivScroll2", minInterval);
+    }
+
+
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {       
+        //await _jsModule.InvokeVoidAsync("showAlert", e.Location);
+
+        if (e.Location.Contains("whatismindfulness")){
+          
+            if (!scrolledToWhatIs)
+            {
+                // await _jsModule.InvokeVoidAsync("showAlert", "Scroll Now!");
+                await _jsModule.InvokeVoidAsync("onLoadScrollToWhatIsMindfulness");
+                scrolledToWhatIs = true;
+            }
+            
+        }
+
+        if (e.Location.Contains("aboutJean"))
+        {
+
+            if (!scrolledAboutJean)
+            {
+                // await _jsModule.InvokeVoidAsync("showAlert", "Scroll Now!");
+                await _jsModule.InvokeVoidAsync("onLoadScrollToAboutJean");
+                scrolledAboutJean = true;
+            }
+
+        }
+        
+    }
+
+    public void Dispose()
+    {
+       // Navigation.LocationChanged -= OnLocationChanged;
+    }
+
+  
+}

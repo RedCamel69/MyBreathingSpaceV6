@@ -1,0 +1,114 @@
+﻿@page "/mbsr/weeks7and8"
+@layout SecondaryLayout
+
+@inject IJSRuntime JS
+@implements IDisposable
+
+
+<PageTitle>MSBR Weeks 7 and 8</PageTitle>
+
+<!-- ======= WhatIsMindfulness Section ======= -->
+<section id="msbr-title" class="about " data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white; padding-top:130px">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="mbsr#weeks7and8">MSBR Overview</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Weeks 7 and 8</li>
+            </ol>
+        </nav>
+
+        <div class="section-title">
+            <h2>Weeks 7 and 8</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-12">
+                
+
+                <h3 class="display-3">Life Style Choices: How can I best take care of myself?</h3>
+                
+
+                <p>Week 7 is a 2.5 hour session and will include:</p>
+                
+                <ul class="list-group">
+                    <li class="list-group-item">A review and discussion about the silent retreat.</li>
+                    <li class="list-group-item">Continued discussion about communication which began in week 6.</li>
+                    <li class="list-group-item">Developing discipline and flexibility in personal daily mindfulness practice with an emphasis on maintaining 45 minutes of daily practice, without recorded instructions.</li>
+                    <li class="list-group-item">Encouraging attunement to the changing conditions of daily life, and adapting practice accordingly.</li>
+                </ul>
+                
+                <h3 class="display-3">Keeping Your Mindfulness Alive</h3>
+                <p>
+                Week 8 is a 3.0 hour session, and includes:
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Participants are given ample opportunity to inquire into and clarify any lingering questions about the various practices and their applications in everyday life.</li>
+                    <li class="list-group-item">A review of the program is included with an emphasis on daily strategies for maintaining and deepening the skills developed during the course.</li>
+                    <li class="list-group-item">Closure by honouring both the end of this program and the beginning of living one’s life informed with mindfulness.</li>
+                    <li class="list-group-item">Voluntary group contribution acknowledging what has been most salient, what people are taking away, or what has been discovered. It is important for all participants to know that all comments are welcomed in this segment of class 8. It is an open, honest appraisal of each participant’s experience of MBSR.</li>
+                </ul>
+
+                
+                
+                
+                
+            
+
+            </div>
+        </div>
+    </div>
+</section><!-- End About Us Section -->
+@code {
+
+    private IJSObjectReference? _jsModule;
+
+
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
+
+        if (_jsModule != null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    private async Task OnShowModalClick()
+    {
+        //await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        //await modal?.HideAsync();
+    }
+}

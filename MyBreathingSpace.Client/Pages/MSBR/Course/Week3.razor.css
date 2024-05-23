@@ -1,0 +1,91 @@
+﻿
+.mindfulness-bg-dawn {
+    background: url(../img/week3/dawn-2.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding:2em;
+    padding-top: 5em;
+}
+
+.mindfulness-bg-movement-1 {
+   /* background: url(../img/week3/mindful-walking-1.jpg) no-repeat fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    /*color: white;*/
+    padding: 0.5em;
+}
+
+.home-practice-bg {
+    background: url(../img/mindfulness-practice-1.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding: 0.5em;
+}
+
+.row {
+    animation: row_fade 1s ease;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.5;
+    padding: 1em;
+    animation: poem_fade 1s;
+}
+
+@keyframes poem_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .mindfulness-bg-movement-1 {
+        background: url(../img/week3/mindful-walking-1.jpg) no-repeat fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        color: white;
+        padding: 0em;
+    }
+
+    .home-practice-bg {
+        background: url(../img/mindfulness-practice-1.jpg) no-repeat fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        color: white;
+        padding: 0em;
+    }
+}

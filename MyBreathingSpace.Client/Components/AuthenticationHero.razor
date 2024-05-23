@@ -1,0 +1,21 @@
+﻿<section id="hero" class="d-flex flex-column justify-content-center">
+   
+    @if (Action is not null && Action.ToUpper().Trim() == "LOGIN-FAILED")
+    {
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <h1 class="display-6">Unfortunately login has failed.</h1>
+                <p>
+                    Please try again or return to the <a href="/" aria-label="Go back to the landing page">home page.</a>
+                </p>
+            </div>
+        </div>
+    }
+
+   
+
+</section>
+
+@code {
+    [Parameter] public string? Action { get; set; }
+}

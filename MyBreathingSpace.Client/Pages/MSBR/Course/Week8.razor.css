@@ -1,0 +1,105 @@
+﻿.mindfulness-bg-kindness {
+    background: url(../img/week8/kindness.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+   padding:2em;
+    padding-top: 5em;
+    text-align:center;
+    background-position:center;
+}
+
+.home-practice-bg {
+    background: url(../img/mindfulness-practice-1.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position:center;
+    overflow: hidden;
+    color: white;
+    padding: 0.5em;
+}
+
+.row {
+    animation: row_fade 1s ease;
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.5;
+    padding: 1em;
+    animation: poem_fade 1s ease;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-practice-bg {        
+        padding: 0em;
+    }
+}
+
+#videoDiv2 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: block;
+    position: relative;
+    height:auto;
+}
+/* This has been changed */
+#video2 {
+    width: 100%;
+    height: auto
+}
+/* This has been changed */
+#videoMessage2 {
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color:white;
+    text-align:center;
+    
+}
+/*
+@keyframes example {
+    0% {       
+        transform: scale(1); 
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.breathing {
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}*/

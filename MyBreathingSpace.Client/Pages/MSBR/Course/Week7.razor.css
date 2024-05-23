@@ -1,0 +1,50 @@
+﻿.mindfulness-bg-leisure {
+    background: url(../img/week7/leisure-tinypng.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+   padding:2em;
+    padding-top: 5em;
+    text-align:center;
+}
+
+.home-practice-bg {
+    background: url(../img/mindfulness-practice-1.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding: 0.5em;
+}
+
+.row {
+    animation: row_fade 1s ease;
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.5;
+    padding: 1em;
+    animation: poem_fade 1s ease;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-practice-bg {        
+        padding: 0em;
+    }
+}
