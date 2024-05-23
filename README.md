@@ -8,7 +8,7 @@ Built in .NET 8 - the front end is a Blazor WASM standalone application. The sol
 
 https://www.mybreathingspace.net/
 
-![image](https://github.com/RedCamel69/mybreathingspace-concept1/assets/10982602/389caa2f-6373-4184-a5bd-940eeb10231c)
+
 
 
 
