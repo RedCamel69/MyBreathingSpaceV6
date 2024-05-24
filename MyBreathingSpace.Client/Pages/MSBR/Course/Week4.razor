@@ -374,7 +374,17 @@
         </section>
     </Authorized>
     <NotAuthorized>
-
+        <section class="d-flex flex-column vh-100 text-white">
+            <div class="mx-auto custom-container p-4 text-center">
+                <h1 class="display-6">You need to be logged in to access this content</h1>
+                <p class="text-white">
+                    Please
+                    <a href="authentication/login" class="border border-white p-1">log in</a>
+                    or return to the <a href="/" aria-label="Go back to the landing page" class="border border-white p-1">home page.</a>
+                </p>
+                @*  <LoginDisplay></LoginDisplay> *@
+            </div>
+        </section>
     </NotAuthorized>
 </AuthorizeView>
 

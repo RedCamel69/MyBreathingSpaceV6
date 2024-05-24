@@ -3,10 +3,28 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 <RemoteAuthenticatorView Action="@Action" />
 
+<section id="hero" class="d-flex flex-column vh-100">
 
-<AuthenticationHero Action="@Action">  
+    @if (Action is not null && Action.ToUpper().Trim() == "LOGIN-FAILED")
+    {
+        <div class="container justify-content-center align-text-top text-center">
+           
+                <h1 class="display-6 text-white">Unfortunately login has failed.</h1>
+                <p class="text-white">
+                    Please   
+                        <a href="authentication/login" class="border border-white p-1">try again</a>
+                    or return to the <a href="/" aria-label="Go back to the landing page" class="border border-white p-1">home page.</a>
+                </p>
+           
+        </div>
+    }
+
+
+
+</section>
+@* <AuthenticationHero Action="@Action">  
 </AuthenticationHero>
-
+ *@
 @code{
     [Parameter] public string? Action { get; set; }
 }

@@ -580,13 +580,21 @@
 
     </Authorized>
     <NotAuthorized>
-        <div class="d-flex align-items-center justify-content-center vh-100 text-white">
+       <section class="d-flex flex-column vh-100 text-white">
             <div class="mx-auto custom-container p-4 text-center">
-                <div>
+                
+               
+
                     <h1 class="display-6">You need to be logged in to access this content</h1>
-                </div>
-                <LoginDisplay></LoginDisplay>
+
+                <p class="text-white">
+                    Please
+                    <a href="authentication/login" class="border border-white p-1">log in</a>
+                    or return to the <a href="/" aria-label="Go back to the landing page" class="border border-white p-1">home page.</a>
+                </p>
+
+               @*  <LoginDisplay></LoginDisplay> *@
             </div>
-        </div>      
+        </section>>      
     </NotAuthorized>
 </AuthorizeView>
