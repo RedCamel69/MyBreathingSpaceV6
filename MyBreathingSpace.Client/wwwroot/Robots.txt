@@ -2,3 +2,4 @@
 
 Disallow: /admin/
 Disallow: /*.test/
+Sitemap: https://www.mybreathingspace.net/sitemap.xml
