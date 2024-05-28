@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\sitemap.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="wwwroot\js\main.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
