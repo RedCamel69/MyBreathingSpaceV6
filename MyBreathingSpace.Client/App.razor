@@ -1,7 +1,7 @@
 ﻿<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(SecondaryLayout)">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MyBreathingSpaceV6Layout)">
                 <NotAuthorized>
                     @if (context.User.Identity?.IsAuthenticated != true)
                     {
@@ -17,8 +17,9 @@
         </Found>
         <NotFound>
             <PageTitle>Not found</PageTitle>
-            <LayoutView Layout="@typeof(SecondaryLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
+            <LayoutView Layout="@typeof(MyBreathingSpaceV6Layout)">
+                @* <p role="alert">Sorry, there's nothing at this address.</p> *@
+                <PageNotFound></PageNotFound>
             </LayoutView>
         </NotFound>
     </Router>
