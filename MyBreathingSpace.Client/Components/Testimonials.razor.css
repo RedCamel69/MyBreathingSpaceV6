@@ -1,7 +1,5 @@
 ﻿
 .testimonials {
-
-   padding-top:0;
 }
 
 .testimonials .section-header {
@@ -52,8 +50,10 @@
 
 .testimonials .testimonial-item p {
     font-style: italic;
-    margin: 0 auto 15px auto;
-    color: #eee;
+    margin: 1rem auto 15px auto;
+    color: #fff;
+    font-weight:700;
+
 }
 
 
@@ -67,6 +67,6 @@
     }
 
     .carousel-item-sticky-height{
-    height:25em;
+    height:24em;
 }
 }
