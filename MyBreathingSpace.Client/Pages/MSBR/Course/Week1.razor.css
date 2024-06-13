@@ -1,6 +1,6 @@
 ﻿
 .mindfulness-bg-daisies {
-    background: url(../img/week1/daisies-bg.jpg) no-repeat fixed;
+    background: url(../img/week1/daisies-bg.webp) no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -8,18 +8,16 @@
     overflow: hidden;
     color: white;
     padding:2em;
-    padding-top: 5em;
-    
+    padding-top: 5em;   
 }
 
 @media (max-width: 768px) { 
     
 .mindfulness-bg-daisies {
-   /* padding-top: 5em;*/
-}
+    /* padding-top: 5em;*/
+    }
 
 }
-
 
 .row {
     animation: row_fade 1s;
